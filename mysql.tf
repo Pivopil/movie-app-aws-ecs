@@ -129,7 +129,7 @@ variable "major_engine_version" {
 variable "family" {
   description = "The family of the DB parameter group"
   type        = string
-  default     = "mysql8"
+  default     = "mysql8.0"
 }
 
 variable "publicly_accessible" {
