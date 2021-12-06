@@ -1,0 +1,28 @@
+[
+  {
+    "name": "${task_definition_name}",
+    "image": "${docker_image_url}",
+    "essential": true,
+    "environment": [{
+      "name": "SPRING_PROFILES_ACTIVE",
+      "value": "${spring_profile}"
+    }, {
+      "name": "GOOGLE_CLIENT_ID",
+      "value": "${google_client_id}"
+    }, {
+      "name": "DATABASE_URL",
+      "value": "${database_url}"
+    }],
+    "portMappings": [{
+      "containerPort": ${docker_container_port}
+    }],
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-group": "${ecs_service_name}-LogGroup",
+        "awslogs-region": "${region}",
+        "awslogs-stream-prefix": "${ecs_service_name}-LogGroup-stream"
+      }
+    }
+  }
+]
