@@ -185,7 +185,7 @@ variable "spring_profile" {
 }
 
 variable "desired_task_number" {
-  default = 1
+  default = 2
 }
 
 variable "google_client_id" {
